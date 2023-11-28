@@ -24,12 +24,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=8m
 
 # Semc
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.semc.version.sw=1282-2729 \
-    ro.semc.version.cust=1288-7827 \
-    ro.semc.version.cust_revision=R4D \
-    ro.semc.product.model=D6603 \
-    ro.semc.ms_type_id=PM-0800-BV
+ifeq ($(findstring z3dual,$(TARGET_PRODUCT)),)
+    PRODUCT_PROPERTY_OVERRIDES += \
+        ro.semc.version.sw=1282-2729 \
+        ro.semc.version.cust=1288-7827 \
+        ro.semc.version.cust_revision=R4D \
+        ro.semc.product.model=D6603 \
+        ro.semc.ms_type_id=PM-0800-BV
+endif
 
 # LCD
 PRODUCT_PROPERTY_OVERRIDES += \
